@@ -609,7 +609,7 @@ def resnet50_with_adlayer(args):
     """
     if args.pretrained:
         model = ResNet_with_ADlayer(Bottleneck, [3, 4, 6, 3], args)
-        pretrained_dict = torch.load(args.pretrained)['model']
+        pretrained_dict = torch.load(args.pretrained)
         model_dict = model.state_dict()
 
         keys = deepcopy(pretrained_dict).keys()

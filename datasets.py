@@ -247,7 +247,7 @@ class RAFTrainSet(data.Dataset):
         lines = open(data_list).readlines()
         for line in lines:
             path, label = line.strip().split(' ')
-            real_path = line.rsplit('/', 1)[0] + '/' + path
+            real_path = data_list.rsplit('/', 1)[0] + '/' + path
             self.images.append(real_path)
             self.targets.append(int(label))
         if self.args.aug == True:
@@ -289,7 +289,7 @@ class RAFTestSet(data.Dataset):
         lines = open(data_list).readlines()
         for line in lines:
             path, label = line.strip().split(' ')
-            real_path = line.rsplit('/', 1)[0] + '/' + path
+            real_path = data_list.rsplit('/', 1)[0] + '/' + path
             self.images.append(real_path)
             self.targets.append(int(label))
         else:

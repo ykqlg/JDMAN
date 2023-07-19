@@ -1,1 +1,675 @@
 your log file
+run date: 2023-07-19 19:15:49.012188
+第0次实验
+classifier.0.weight
+classifier.0.bias
+classifier.3.weight
+classifier.3.bias
+classifier.6.weight
+classifier.6.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'vgg16', 'MI': True, 'pretrained': './model/pre_trained/vgg16_bn-6c64b313.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': 'path_to_save_your_trained_models', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Traceback (most recent call last):
+  File "main.py", line 166, in <module>
+    main()
+  File "main.py", line 122, in main
+    train_summary = trainer.train(epoch, train_loader,val_loader)  # 训练一次, return the epoch num and acc
+  File "/home/u200110514/project/JDMAN/train.py", line 117, in train
+    data_1 = data_1_iter.next()
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1085, in _next_data
+    return self._process_data(data)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1111, in _process_data
+    data.reraise()
+  File "/opt/conda/lib/python3.7/site-packages/torch/_utils.py", line 428, in reraise
+    raise self.exc_type(msg)
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 198, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/u200110514/project/JDMAN/datasets.py", line 275, in __getitem__
+    image = self.transform(image)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 67, in __call__
+    img = t(img)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 185, in __call__
+    return F.to_pil_image(pic, self.mode)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/transforms/functional.py", line 176, in to_pil_image
+    raise TypeError('pic should be Tensor or ndarray. Got {}.'.format(type(pic)))
+TypeError: pic should be Tensor or ndarray. Got <class 'NoneType'>.
+
+run date: 2023-07-19 19:17:25.861068
+第0次实验
+classifier.0.weight
+classifier.0.bias
+classifier.3.weight
+classifier.3.bias
+classifier.6.weight
+classifier.6.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'vgg16', 'MI': True, 'pretrained': './model/pre_trained/vgg16_bn-6c64b313.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': './save_path', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Traceback (most recent call last):
+  File "main.py", line 166, in <module>
+    main()
+  File "main.py", line 122, in main
+    train_summary = trainer.train(epoch, train_loader,val_loader)  # 训练一次, return the epoch num and acc
+  File "/home/u200110514/project/JDMAN/train.py", line 117, in train
+    data_1 = data_1_iter.next()
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1085, in _next_data
+    return self._process_data(data)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1111, in _process_data
+    data.reraise()
+  File "/opt/conda/lib/python3.7/site-packages/torch/_utils.py", line 428, in reraise
+    raise self.exc_type(msg)
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 198, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/opt/conda/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/u200110514/project/JDMAN/datasets.py", line 275, in __getitem__
+    image = self.transform(image)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 67, in __call__
+    img = t(img)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 185, in __call__
+    return F.to_pil_image(pic, self.mode)
+  File "/opt/conda/lib/python3.7/site-packages/torchvision/transforms/functional.py", line 176, in to_pil_image
+    raise TypeError('pic should be Tensor or ndarray. Got {}.'.format(type(pic)))
+TypeError: pic should be Tensor or ndarray. Got <class 'NoneType'>.
+
+run date: 2023-07-19 19:18:08.117878
+第0次实验
+classifier.0.weight
+classifier.0.bias
+classifier.3.weight
+classifier.3.bias
+classifier.6.weight
+classifier.6.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'vgg16', 'MI': True, 'pretrained': './model/pre_trained/vgg16_bn-6c64b313.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': './save_path', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Traceback (most recent call last):
+  File "main.py", line 166, in <module>
+    main()
+  File "main.py", line 122, in main
+    train_summary = trainer.train(epoch, train_loader,val_loader)  # 训练一次, return the epoch num and acc
+  File "/home/u200110514/project/JDMAN/train.py", line 142, in train
+    adv_loss = CDAN([features, softmax_out], self.adv_model, entropy=None, coeff=resnet.calc_coeff(epoch*112+i), random_layer=None)
+  File "/home/u200110514/project/JDMAN/my_loss.py", line 79, in CDAN
+    ad_out = ad_net(feature.view(-1, feature.size(1)))
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/u200110514/project/JDMAN/model/resnet.py", line 747, in forward
+    x = self.ad_layer1(x)
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/modules/linear.py", line 93, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/functional.py", line 1690, in linear
+    ret = torch.addmm(bias, input, weight.t())
+RuntimeError: mat1 dim 1 must match mat2 dim 0
+run date: 2023-07-19 19:19:17.849917
+第0次实验
+Traceback (most recent call last):
+  File "main.py", line 166, in <module>
+    main()
+  File "main.py", line 69, in main
+    model, state, adv_model = create_model(args)
+  File "main.py", line 34, in create_model
+    model = model_creators[args.model](args) # model结构
+  File "/home/u200110514/project/JDMAN/model/resnet.py", line 612, in resnet50_with_adlayer
+    pretrained_dict = torch.load(args.pretrained)['model']
+KeyError: 'model'
+run date: 2023-07-19 19:19:54.168659
+第0次实验
+fc.weight
+fc.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'resnet50_with_adlayer_all', 'MI': True, 'pretrained': './model/pre_trained/resnet50.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': './save_path', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Ep:[1/10], Ba:[1/223], ls1:2.2410, lmc:4399.4727, ladv:0.7908, ac1:17.1875, lr:0.0100
+run date: 2023-07-19 19:20:14.480638
+第0次实验
+classifier.0.weight
+classifier.0.bias
+classifier.3.weight
+classifier.3.bias
+classifier.6.weight
+classifier.6.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'vgg16', 'MI': True, 'pretrained': './model/pre_trained/vgg16_bn-6c64b313.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': './save_path', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Traceback (most recent call last):
+  File "main.py", line 166, in <module>
+    main()
+  File "main.py", line 122, in main
+    train_summary = trainer.train(epoch, train_loader,val_loader)  # 训练一次, return the epoch num and acc
+  File "/home/u200110514/project/JDMAN/train.py", line 142, in train
+    adv_loss = CDAN([features, softmax_out], self.adv_model, entropy=None, coeff=resnet.calc_coeff(epoch*112+i), random_layer=None)
+  File "/home/u200110514/project/JDMAN/my_loss.py", line 79, in CDAN
+    ad_out = ad_net(feature.view(-1, feature.size(1)))
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/u200110514/project/JDMAN/model/resnet.py", line 747, in forward
+    x = self.ad_layer1(x)
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/modules/linear.py", line 93, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/opt/conda/lib/python3.7/site-packages/torch/nn/functional.py", line 1690, in linear
+    ret = torch.addmm(bias, input, weight.t())
+RuntimeError: mat1 dim 1 must match mat2 dim 0
+run date: 2023-07-19 21:03:53.976618
+第0次实验
+fc.weight
+fc.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'resnet50_with_adlayer_all', 'MI': True, 'pretrained': './model/pre_trained/resnet50.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': './save_path', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Ep:[1/10], Ba:[1/223], ls1:2.2580, lmc:4353.4639, ladv:0.9422, ac1:17.1875, lr:0.0100
+Ep:[1/10], Ba:[31/223], ls1:1.8383, lmc:1126.8834, ladv:0.7035, ac1:25.0000, lr:0.0100
+Ep:[1/10], Ba:[61/223], ls1:1.9272, lmc:761.1370, ladv:0.6903, ac1:14.0625, lr:0.0100
+Ep:[1/10], Ba:[91/223], ls1:1.6800, lmc:197.8581, ladv:0.7173, ac1:42.1875, lr:0.0100
+Ep:[1/10], Ba:[121/223], ls1:1.7308, lmc:160.4510, ladv:0.6926, ac1:28.1250, lr:0.0100
+Ep:[1/10], Ba:[151/223], ls1:1.5769, lmc:60.5533, ladv:0.6864, ac1:43.7500, lr:0.0100
+Ep:[1/10], Ba:[181/223], ls1:1.6589, lmc:57.7318, ladv:0.691, ac1:35.9375, lr:0.0100
+Ep:[1/10], Ba:[211/223], ls1:1.2699, lmc:64.7034, ladv:0.6768, ac1:50.0000, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[1]  Acc 39.078
+
+training time of this epoch: 0:01:56.658107
+testing time of this epoch: 0:00:02.283218
+Ep:[2/10], Ba:[1/223], ls1:1.1132, lmc:67.7105, ladv:0.6947, ac1:67.1875, lr:0.0100
+Ep:[2/10], Ba:[31/223], ls1:1.3988, lmc:84.9707, ladv:0.7014, ac1:42.1875, lr:0.0100
+Ep:[2/10], Ba:[61/223], ls1:1.1321, lmc:57.5811, ladv:0.6864, ac1:65.6250, lr:0.0100
+Ep:[2/10], Ba:[91/223], ls1:1.1656, lmc:40.2323, ladv:0.6897, ac1:60.9375, lr:0.0100
+Ep:[2/10], Ba:[121/223], ls1:1.1627, lmc:43.1421, ladv:0.6928, ac1:62.5000, lr:0.0100
+Ep:[2/10], Ba:[151/223], ls1:1.1880, lmc:35.7334, ladv:0.6962, ac1:56.2500, lr:0.0100
+Ep:[2/10], Ba:[181/223], ls1:0.9195, lmc:35.6679, ladv:0.679, ac1:67.1875, lr:0.0100
+Ep:[2/10], Ba:[211/223], ls1:1.0129, lmc:32.4614, ladv:0.7106, ac1:53.1250, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[2]  Acc 64.563
+
+training time of this epoch: 0:01:56.536239
+testing time of this epoch: 0:00:02.274326
+Ep:[3/10], Ba:[1/223], ls1:0.9523, lmc:34.3224, ladv:0.6873, ac1:73.4375, lr:0.0100
+Ep:[3/10], Ba:[31/223], ls1:0.8505, lmc:30.3211, ladv:0.6926, ac1:73.4375, lr:0.0100
+Ep:[3/10], Ba:[61/223], ls1:0.9374, lmc:45.4591, ladv:0.6888, ac1:64.0625, lr:0.0100
+Ep:[3/10], Ba:[91/223], ls1:1.0394, lmc:32.5307, ladv:0.6942, ac1:56.2500, lr:0.0100
+Ep:[3/10], Ba:[121/223], ls1:0.8583, lmc:42.7580, ladv:0.6962, ac1:67.1875, lr:0.0100
+Ep:[3/10], Ba:[151/223], ls1:0.9311, lmc:25.7752, ladv:0.6924, ac1:73.4375, lr:0.0100
+Ep:[3/10], Ba:[181/223], ls1:0.7833, lmc:30.2562, ladv:0.6904, ac1:71.8750, lr:0.0100
+Ep:[3/10], Ba:[211/223], ls1:0.7558, lmc:33.7933, ladv:0.6845, ac1:68.7500, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[3]  Acc 72.735
+
+training time of this epoch: 0:01:56.809456
+testing time of this epoch: 0:00:02.290897
+Ep:[4/10], Ba:[1/223], ls1:0.8830, lmc:33.1390, ladv:0.6944, ac1:67.1875, lr:0.0100
+Ep:[4/10], Ba:[31/223], ls1:0.7984, lmc:27.7103, ladv:0.6939, ac1:68.7500, lr:0.0100
+Ep:[4/10], Ba:[61/223], ls1:0.8947, lmc:27.8075, ladv:0.6895, ac1:65.6250, lr:0.0100
+Ep:[4/10], Ba:[91/223], ls1:0.6109, lmc:20.9172, ladv:0.6984, ac1:75.0000, lr:0.0100
+Ep:[4/10], Ba:[121/223], ls1:0.8724, lmc:32.7389, ladv:0.6793, ac1:64.0625, lr:0.0100
+Ep:[4/10], Ba:[151/223], ls1:0.6376, lmc:17.1222, ladv:0.687, ac1:76.5625, lr:0.0100
+Ep:[4/10], Ba:[181/223], ls1:0.6185, lmc:30.6565, ladv:0.6899, ac1:81.2500, lr:0.0100
+Ep:[4/10], Ba:[211/223], ls1:0.7045, lmc:17.5616, ladv:0.6836, ac1:71.8750, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[4]  Acc 77.023
+
+training time of this epoch: 0:01:56.548865
+testing time of this epoch: 0:00:02.253131
+Ep:[5/10], Ba:[1/223], ls1:0.7754, lmc:20.9889, ladv:0.7048, ac1:71.8750, lr:0.0100
+Ep:[5/10], Ba:[31/223], ls1:0.8665, lmc:18.2555, ladv:0.6983, ac1:62.5000, lr:0.0100
+Ep:[5/10], Ba:[61/223], ls1:0.7007, lmc:20.8683, ladv:0.6816, ac1:67.1875, lr:0.0100
+Ep:[5/10], Ba:[91/223], ls1:0.4310, lmc:13.6181, ladv:0.6984, ac1:87.5000, lr:0.0100
+Ep:[5/10], Ba:[121/223], ls1:0.5498, lmc:20.6231, ladv:0.6852, ac1:76.5625, lr:0.0100
+Ep:[5/10], Ba:[151/223], ls1:0.8814, lmc:28.0388, ladv:0.6817, ac1:73.4375, lr:0.0100
+Ep:[5/10], Ba:[181/223], ls1:0.5968, lmc:18.9630, ladv:0.666, ac1:78.1250, lr:0.0100
+Ep:[5/10], Ba:[211/223], ls1:0.5827, lmc:15.5563, ladv:0.6774, ac1:75.0000, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[5]  Acc 82.767
+
+training time of this epoch: 0:01:55.886921
+testing time of this epoch: 0:00:02.247448
+Ep:[6/10], Ba:[1/223], ls1:0.5059, lmc:16.6630, ladv:0.6884, ac1:82.8125, lr:0.0100
+Ep:[6/10], Ba:[31/223], ls1:0.5417, lmc:15.6062, ladv:0.6821, ac1:82.8125, lr:0.0100
+Ep:[6/10], Ba:[61/223], ls1:0.5968, lmc:20.2823, ladv:0.6859, ac1:81.2500, lr:0.0100
+Ep:[6/10], Ba:[91/223], ls1:0.6226, lmc:17.3944, ladv:0.6773, ac1:71.8750, lr:0.0100
+Ep:[6/10], Ba:[121/223], ls1:0.8188, lmc:19.0981, ladv:0.6869, ac1:73.4375, lr:0.0100
+Ep:[6/10], Ba:[151/223], ls1:0.5595, lmc:14.4972, ladv:0.6899, ac1:84.3750, lr:0.0100
+Ep:[6/10], Ba:[181/223], ls1:0.7185, lmc:15.6137, ladv:0.6738, ac1:73.4375, lr:0.0100
+Ep:[6/10], Ba:[211/223], ls1:0.6552, lmc:14.3002, ladv:0.684, ac1:78.1250, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[6]  Acc 75.485
+
+training time of this epoch: 0:01:55.138855
+testing time of this epoch: 0:00:02.212928
+Ep:[7/10], Ba:[1/223], ls1:0.5489, lmc:14.7956, ladv:0.6812, ac1:81.2500, lr:0.0100
+Ep:[7/10], Ba:[31/223], ls1:0.6497, lmc:19.8579, ladv:0.6856, ac1:79.6875, lr:0.0100
+Ep:[7/10], Ba:[61/223], ls1:0.5985, lmc:16.1826, ladv:0.6691, ac1:75.0000, lr:0.0100
+Ep:[7/10], Ba:[91/223], ls1:0.5285, lmc:15.6904, ladv:0.6721, ac1:79.6875, lr:0.0100
+Ep:[7/10], Ba:[121/223], ls1:0.5427, lmc:14.6188, ladv:0.659, ac1:78.1250, lr:0.0100
+Ep:[7/10], Ba:[151/223], ls1:0.4584, lmc:12.3558, ladv:0.6636, ac1:82.8125, lr:0.0100
+Ep:[7/10], Ba:[181/223], ls1:0.5857, lmc:14.7965, ladv:0.668, ac1:76.5625, lr:0.0100
+Ep:[7/10], Ba:[211/223], ls1:0.6441, lmc:16.0362, ladv:0.6827, ac1:76.5625, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[7]  Acc 77.265
+
+training time of this epoch: 0:01:54.698387
+testing time of this epoch: 0:00:02.201368
+Ep:[8/10], Ba:[1/223], ls1:0.5805, lmc:15.4737, ladv:0.6826, ac1:78.1250, lr:0.0100
+Ep:[8/10], Ba:[31/223], ls1:0.3998, lmc:11.4972, ladv:0.7003, ac1:82.8125, lr:0.0100
+Ep:[8/10], Ba:[61/223], ls1:0.5538, lmc:15.7534, ladv:0.6662, ac1:82.8125, lr:0.0100
+Ep:[8/10], Ba:[91/223], ls1:0.5691, lmc:14.0858, ladv:0.672, ac1:71.8750, lr:0.0100
+Ep:[8/10], Ba:[121/223], ls1:0.5131, lmc:15.1661, ladv:0.6741, ac1:84.3750, lr:0.0100
+Ep:[8/10], Ba:[151/223], ls1:0.4900, lmc:13.2200, ladv:0.6652, ac1:82.8125, lr:0.0100
+Ep:[8/10], Ba:[181/223], ls1:0.3735, lmc:14.5159, ladv:0.6749, ac1:90.6250, lr:0.0100
+Ep:[8/10], Ba:[211/223], ls1:0.6419, lmc:11.6860, ladv:0.6754, ac1:76.5625, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[8]  Acc 80.340
+
+training time of this epoch: 0:01:54.687657
+testing time of this epoch: 0:00:02.274066
+Ep:[9/10], Ba:[1/223], ls1:0.4499, lmc:12.4328, ladv:0.6767, ac1:84.3750, lr:0.0100
+Ep:[9/10], Ba:[31/223], ls1:0.5542, lmc:13.9692, ladv:0.6782, ac1:84.3750, lr:0.0100
+Ep:[9/10], Ba:[61/223], ls1:0.3929, lmc:11.5806, ladv:0.6682, ac1:82.8125, lr:0.0100
+Ep:[9/10], Ba:[91/223], ls1:0.6764, lmc:17.4162, ladv:0.6794, ac1:78.1250, lr:0.0100
+Ep:[9/10], Ba:[121/223], ls1:0.5081, lmc:15.2668, ladv:0.6664, ac1:82.8125, lr:0.0100
+Ep:[9/10], Ba:[151/223], ls1:0.6801, lmc:11.1722, ladv:0.6765, ac1:75.0000, lr:0.0100
+Ep:[9/10], Ba:[181/223], ls1:0.5222, lmc:13.6976, ladv:0.6783, ac1:85.9375, lr:0.0100
+Ep:[9/10], Ba:[211/223], ls1:0.3210, lmc:9.3923, ladv:0.6875, ac1:89.0625, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[9]  Acc 79.207
+
+training time of this epoch: 0:01:54.971451
+testing time of this epoch: 0:00:02.244176
+Ep:[10/10], Ba:[1/223], ls1:0.5373, lmc:12.4046, ladv:0.6842, ac1:79.6875, lr:0.0100
+Ep:[10/10], Ba:[31/223], ls1:0.4767, lmc:13.2829, ladv:0.6552, ac1:82.8125, lr:0.0100
+Ep:[10/10], Ba:[61/223], ls1:0.4339, lmc:11.5760, ladv:0.6703, ac1:82.8125, lr:0.0100
+Ep:[10/10], Ba:[91/223], ls1:0.3166, lmc:9.1128, ladv:0.6756, ac1:84.3750, lr:0.0100
+Ep:[10/10], Ba:[121/223], ls1:0.5549, lmc:19.1174, ladv:0.6572, ac1:81.2500, lr:0.0100
+Ep:[10/10], Ba:[151/223], ls1:0.5523, lmc:13.4152, ladv:0.6556, ac1:79.6875, lr:0.0100
+Ep:[10/10], Ba:[181/223], ls1:0.3441, lmc:12.1061, ladv:0.6789, ac1:81.2500, lr:0.0100
+Ep:[10/10], Ba:[211/223], ls1:0.6615, lmc:12.9207, ladv:0.6746, ac1:76.5625, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[10]  Acc 82.848
+
+training time of this epoch: 0:01:55.467942
+testing time of this epoch: 0:00:02.239520
+- Best:  Acc  0.000 at 10
+第1次实验
+fc.weight
+fc.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'resnet50_with_adlayer_all', 'MI': True, 'pretrained': './model/pre_trained/resnet50.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': './save_path', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Ep:[1/10], Ba:[1/223], ls1:1.9308, lmc:4282.2544, ladv:0.7859, ac1:26.5625, lr:0.0100
+Ep:[1/10], Ba:[31/223], ls1:1.8608, lmc:1698.4646, ladv:0.7028, ac1:25.0000, lr:0.0100
+Ep:[1/10], Ba:[61/223], ls1:1.8061, lmc:487.7549, ladv:0.6988, ac1:25.0000, lr:0.0100
+Ep:[1/10], Ba:[91/223], ls1:1.5857, lmc:152.1428, ladv:0.6988, ac1:37.5000, lr:0.0100
+Ep:[1/10], Ba:[121/223], ls1:1.6425, lmc:136.8614, ladv:0.7065, ac1:34.3750, lr:0.0100
+Ep:[1/10], Ba:[151/223], ls1:1.5594, lmc:87.9145, ladv:0.6765, ac1:42.1875, lr:0.0100
+Ep:[1/10], Ba:[181/223], ls1:1.3153, lmc:55.9859, ladv:0.6904, ac1:48.4375, lr:0.0100
+Ep:[1/10], Ba:[211/223], ls1:1.3048, lmc:51.8915, ladv:0.6926, ac1:56.2500, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[1]  Acc 62.298
+
+training time of this epoch: 0:01:56.493387
+testing time of this epoch: 0:00:02.244592
+Ep:[2/10], Ba:[1/223], ls1:1.1502, lmc:54.2159, ladv:0.6895, ac1:56.2500, lr:0.0100
+Ep:[2/10], Ba:[31/223], ls1:1.0690, lmc:46.4854, ladv:0.6886, ac1:59.3750, lr:0.0100
+Ep:[2/10], Ba:[61/223], ls1:1.1581, lmc:42.9694, ladv:0.7004, ac1:50.0000, lr:0.0100
+Ep:[2/10], Ba:[91/223], ls1:1.1717, lmc:44.4913, ladv:0.691, ac1:60.9375, lr:0.0100
+Ep:[2/10], Ba:[121/223], ls1:1.0736, lmc:45.5610, ladv:0.6905, ac1:60.9375, lr:0.0100
+Ep:[2/10], Ba:[151/223], ls1:0.6126, lmc:32.4581, ladv:0.697, ac1:79.6875, lr:0.0100
+Ep:[2/10], Ba:[181/223], ls1:1.1381, lmc:53.2866, ladv:0.6827, ac1:62.5000, lr:0.0100
+Ep:[2/10], Ba:[211/223], ls1:0.8780, lmc:26.4925, ladv:0.6902, ac1:62.5000, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[2]  Acc 63.754
+
+training time of this epoch: 0:01:57.455702
+testing time of this epoch: 0:00:02.304878
+Ep:[3/10], Ba:[1/223], ls1:0.8889, lmc:46.1542, ladv:0.6992, ac1:60.9375, lr:0.0100
+Ep:[3/10], Ba:[31/223], ls1:0.8458, lmc:31.0718, ladv:0.6821, ac1:68.7500, lr:0.0100
+Ep:[3/10], Ba:[61/223], ls1:1.1311, lmc:52.1705, ladv:0.6883, ac1:64.0625, lr:0.0100
+Ep:[3/10], Ba:[91/223], ls1:0.6351, lmc:30.2463, ladv:0.6947, ac1:78.1250, lr:0.0100
+Ep:[3/10], Ba:[121/223], ls1:0.9156, lmc:41.2278, ladv:0.6927, ac1:65.6250, lr:0.0100
+Ep:[3/10], Ba:[151/223], ls1:0.8589, lmc:35.9155, ladv:0.7035, ac1:75.0000, lr:0.0100
+Ep:[3/10], Ba:[181/223], ls1:0.6832, lmc:23.8177, ladv:0.6975, ac1:78.1250, lr:0.0100
+Ep:[3/10], Ba:[211/223], ls1:0.6561, lmc:21.5598, ladv:0.6909, ac1:75.0000, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[3]  Acc 69.741
+
+training time of this epoch: 0:01:57.689313
+testing time of this epoch: 0:00:02.256590
+Ep:[4/10], Ba:[1/223], ls1:0.6974, lmc:22.2165, ladv:0.6878, ac1:76.5625, lr:0.0100
+Ep:[4/10], Ba:[31/223], ls1:0.8370, lmc:23.1295, ladv:0.6963, ac1:68.7500, lr:0.0100
+Ep:[4/10], Ba:[61/223], ls1:0.4070, lmc:30.4563, ladv:0.6972, ac1:87.5000, lr:0.0100
+Ep:[4/10], Ba:[91/223], ls1:0.8680, lmc:23.7159, ladv:0.6787, ac1:75.0000, lr:0.0100
+Ep:[4/10], Ba:[121/223], ls1:0.6986, lmc:32.6144, ladv:0.6987, ac1:68.7500, lr:0.0100
+Ep:[4/10], Ba:[151/223], ls1:0.6021, lmc:15.7247, ladv:0.6924, ac1:70.3125, lr:0.0100
+Ep:[4/10], Ba:[181/223], ls1:0.6166, lmc:24.5176, ladv:0.6892, ac1:78.1250, lr:0.0100
+Ep:[4/10], Ba:[211/223], ls1:0.7105, lmc:19.4594, ladv:0.6907, ac1:75.0000, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[4]  Acc 71.036
+
+training time of this epoch: 0:01:57.315809
+testing time of this epoch: 0:00:02.271244
+Ep:[5/10], Ba:[1/223], ls1:0.6239, lmc:24.9229, ladv:0.6909, ac1:76.5625, lr:0.0100
+Ep:[5/10], Ba:[31/223], ls1:0.5897, lmc:16.8279, ladv:0.7077, ac1:78.1250, lr:0.0100
+Ep:[5/10], Ba:[61/223], ls1:0.4807, lmc:28.4317, ladv:0.6693, ac1:82.8125, lr:0.0100
+Ep:[5/10], Ba:[91/223], ls1:0.7688, lmc:26.9129, ladv:0.6725, ac1:73.4375, lr:0.0100
+Ep:[5/10], Ba:[121/223], ls1:0.7149, lmc:23.0214, ladv:0.6759, ac1:73.4375, lr:0.0100
+Ep:[5/10], Ba:[151/223], ls1:0.6332, lmc:18.0198, ladv:0.6932, ac1:75.0000, lr:0.0100
+Ep:[5/10], Ba:[181/223], ls1:0.9741, lmc:25.6028, ladv:0.7022, ac1:75.0000, lr:0.0100
+Ep:[5/10], Ba:[211/223], ls1:0.6657, lmc:14.7046, ladv:0.6826, ac1:73.4375, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[5]  Acc 74.595
+
+training time of this epoch: 0:01:56.755350
+testing time of this epoch: 0:00:02.226148
+Ep:[6/10], Ba:[1/223], ls1:0.6039, lmc:15.7411, ladv:0.6857, ac1:76.5625, lr:0.0100
+Ep:[6/10], Ba:[31/223], ls1:0.3928, lmc:14.6130, ladv:0.6992, ac1:92.1875, lr:0.0100
+Ep:[6/10], Ba:[61/223], ls1:0.5496, lmc:20.0129, ladv:0.6875, ac1:84.3750, lr:0.0100
+Ep:[6/10], Ba:[91/223], ls1:0.6281, lmc:17.4538, ladv:0.6653, ac1:79.6875, lr:0.0100
+Ep:[6/10], Ba:[121/223], ls1:0.5929, lmc:17.5697, ladv:0.6856, ac1:78.1250, lr:0.0100
+Ep:[6/10], Ba:[151/223], ls1:0.6212, lmc:16.7684, ladv:0.6861, ac1:82.8125, lr:0.0100
+Ep:[6/10], Ba:[181/223], ls1:0.6661, lmc:18.9707, ladv:0.7024, ac1:76.5625, lr:0.0100
+Ep:[6/10], Ba:[211/223], ls1:0.5812, lmc:17.7638, ladv:0.6695, ac1:75.0000, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[6]  Acc 80.016
+
+training time of this epoch: 0:01:56.108210
+testing time of this epoch: 0:00:02.241113
+Ep:[7/10], Ba:[1/223], ls1:0.3166, lmc:12.2618, ladv:0.6839, ac1:90.6250, lr:0.0100
+Ep:[7/10], Ba:[31/223], ls1:0.4908, lmc:13.0388, ladv:0.6636, ac1:81.2500, lr:0.0100
+Ep:[7/10], Ba:[61/223], ls1:0.6368, lmc:17.6830, ladv:0.6727, ac1:78.1250, lr:0.0100
+Ep:[7/10], Ba:[91/223], ls1:0.5093, lmc:15.5603, ladv:0.6886, ac1:81.2500, lr:0.0100
+Ep:[7/10], Ba:[121/223], ls1:0.4918, lmc:12.0739, ladv:0.6702, ac1:87.5000, lr:0.0100
+Ep:[7/10], Ba:[151/223], ls1:0.5598, lmc:14.5871, ladv:0.6798, ac1:78.1250, lr:0.0100
+Ep:[7/10], Ba:[181/223], ls1:0.8420, lmc:19.3496, ladv:0.6817, ac1:71.8750, lr:0.0100
+Ep:[7/10], Ba:[211/223], ls1:0.5282, lmc:15.7386, ladv:0.6822, ac1:84.3750, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[7]  Acc 76.618
+
+training time of this epoch: 0:01:55.613141
+testing time of this epoch: 0:00:02.295952
+Ep:[8/10], Ba:[1/223], ls1:0.5176, lmc:16.1507, ladv:0.6949, ac1:84.3750, lr:0.0100
+Ep:[8/10], Ba:[31/223], ls1:0.3513, lmc:16.4141, ladv:0.6807, ac1:87.5000, lr:0.0100
+Ep:[8/10], Ba:[61/223], ls1:0.4111, lmc:15.5971, ladv:0.6792, ac1:84.3750, lr:0.0100
+Ep:[8/10], Ba:[91/223], ls1:0.7244, lmc:21.9435, ladv:0.6692, ac1:71.8750, lr:0.0100
+Ep:[8/10], Ba:[121/223], ls1:0.6891, lmc:15.7002, ladv:0.6963, ac1:81.2500, lr:0.0100
+Ep:[8/10], Ba:[151/223], ls1:0.4568, lmc:15.5205, ladv:0.675, ac1:84.3750, lr:0.0100
+Ep:[8/10], Ba:[181/223], ls1:0.3372, lmc:12.9793, ladv:0.6726, ac1:89.0625, lr:0.0100
+Ep:[8/10], Ba:[211/223], ls1:0.4811, lmc:12.4018, ladv:0.675, ac1:79.6875, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[8]  Acc 78.074
+
+training time of this epoch: 0:01:55.199053
+testing time of this epoch: 0:00:02.242221
+Ep:[9/10], Ba:[1/223], ls1:0.5196, lmc:10.9525, ladv:0.6818, ac1:81.2500, lr:0.0100
+Ep:[9/10], Ba:[31/223], ls1:0.4265, lmc:16.0538, ladv:0.6592, ac1:85.9375, lr:0.0100
+Ep:[9/10], Ba:[61/223], ls1:0.5364, lmc:11.7206, ladv:0.6886, ac1:79.6875, lr:0.0100
+Ep:[9/10], Ba:[91/223], ls1:0.4618, lmc:14.5203, ladv:0.6703, ac1:79.6875, lr:0.0100
+Ep:[9/10], Ba:[121/223], ls1:0.5252, lmc:15.6789, ladv:0.6713, ac1:84.3750, lr:0.0100
+Ep:[9/10], Ba:[151/223], ls1:0.4976, lmc:12.8865, ladv:0.6799, ac1:84.3750, lr:0.0100
+Ep:[9/10], Ba:[181/223], ls1:0.5412, lmc:19.6677, ladv:0.6824, ac1:81.2500, lr:0.0100
+Ep:[9/10], Ba:[211/223], ls1:0.6168, lmc:20.2613, ladv:0.6787, ac1:84.3750, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[9]  Acc 73.058
+
+training time of this epoch: 0:01:55.296958
+testing time of this epoch: 0:00:02.243520
+Ep:[10/10], Ba:[1/223], ls1:0.4242, lmc:12.1930, ladv:0.6831, ac1:85.9375, lr:0.0100
+Ep:[10/10], Ba:[31/223], ls1:0.4470, lmc:15.1173, ladv:0.6631, ac1:84.3750, lr:0.0100
+Ep:[10/10], Ba:[61/223], ls1:0.4201, lmc:13.8520, ladv:0.6746, ac1:87.5000, lr:0.0100
+Ep:[10/10], Ba:[91/223], ls1:0.3286, lmc:14.4320, ladv:0.6762, ac1:92.1875, lr:0.0100
+Ep:[10/10], Ba:[121/223], ls1:0.7181, lmc:21.8694, ladv:0.6857, ac1:76.5625, lr:0.0100
+Ep:[10/10], Ba:[151/223], ls1:0.5688, lmc:11.8996, ladv:0.685, ac1:85.9375, lr:0.0100
+Ep:[10/10], Ba:[181/223], ls1:0.5708, lmc:13.3199, ladv:0.6817, ac1:79.6875, lr:0.0100
+Ep:[10/10], Ba:[211/223], ls1:0.5874, lmc:15.6764, ladv:0.6599, ac1:78.1250, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[10]  Acc 80.987
+
+training time of this epoch: 0:01:55.789988
+testing time of this epoch: 0:00:02.251178
+- Best:  Acc  0.000 at 10
+第2次实验
+fc.weight
+fc.bias
+=> Model and criterion are ready
+=> Dataloaders are ready
+=> Logger is ready
+=> Trainer is ready
+=> super parameters: {'shuffle': True, 'train_record': False, 'save_best_model_only': False, 'save_every_model': False, 'test_only': False, 'aug': True, 'model': 'resnet50_with_adlayer_all', 'MI': True, 'pretrained': './model/pre_trained/resnet50.pth', 'train_list0': '/home/u200110514/data/RAFall/RAFlist.txt', 'train_list1': 'path_to_the_training_data/raf-db.txt', 'test_list1': 'path_to_the_testing_data/raf-db.txt', 'test_list2': 'path_to_the_testing_data/affectnet.txt', 'test_list3': 'path_to_the_testing_data/fer2013.txt', 'test_list4': '/home/u200110514/data/CK/CKlist.txt', 'test_list5': 'path_to_the_testing_data/mmi.txt', 'test_list6': 'path_to_the_testing_data/jaffe.txt', 'test_list7': 'path_to_the_testing_data/oul-CASIA.txt', 'test_list8': 'path_to_the_testing_data/sfew.txt', 'test_list9': '/home/u200110514/data/CK/CKlist.txt', 'test_list10': 'path_to_the_testing_data/jaffe_add1.txt', 'print': 'True', 'target': 'ck+', 'get_features': 'source', 'train_data': 'raf2', 'test_data': 'ck+', 'save_path': './save_path', 'log_path': './logs', 'output_classes': 7, 'learn_rate': 0.01, 'momentum': 0.9, 'weight_decay': 0.0005, 'alpha': 0.01, 'beta': 0.01, 'lam1': 0.01, 'n_epochs': 10, 'batch_size': 64, 'criterion': 'mc_loss_center', 'opti': 'SGD', 'resume': False, 'nGPU': '0', 'workers': 8, 'decay': 30, 'size': 224, 'save_result': False}
+True
+=> Start training
+Ep:[1/10], Ba:[1/223], ls1:2.0793, lmc:4282.7520, ladv:0.8307, ac1:6.2500, lr:0.0100
+Ep:[1/10], Ba:[31/223], ls1:1.8200, lmc:1469.1515, ladv:0.6876, ac1:31.2500, lr:0.0100
+Ep:[1/10], Ba:[61/223], ls1:1.6713, lmc:556.0421, ladv:0.6853, ac1:35.9375, lr:0.0100
+Ep:[1/10], Ba:[91/223], ls1:1.5843, lmc:194.1784, ladv:0.6894, ac1:35.9375, lr:0.0100
+Ep:[1/10], Ba:[121/223], ls1:1.2346, lmc:78.9815, ladv:0.6856, ac1:53.1250, lr:0.0100
+Ep:[1/10], Ba:[151/223], ls1:1.1202, lmc:43.1151, ladv:0.6734, ac1:59.3750, lr:0.0100
+Ep:[1/10], Ba:[181/223], ls1:1.1725, lmc:55.7445, ladv:0.6932, ac1:50.0000, lr:0.0100
+Ep:[1/10], Ba:[211/223], ls1:1.0741, lmc:58.3426, ladv:0.6854, ac1:65.6250, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[1]  Acc 69.903
+
+training time of this epoch: 0:01:56.111933
+testing time of this epoch: 0:00:02.285873
+Ep:[2/10], Ba:[1/223], ls1:0.8263, lmc:44.2228, ladv:0.6945, ac1:71.8750, lr:0.0100
+Ep:[2/10], Ba:[31/223], ls1:1.3539, lmc:42.1622, ladv:0.6914, ac1:51.5625, lr:0.0100
+Ep:[2/10], Ba:[61/223], ls1:1.1264, lmc:36.2416, ladv:0.6874, ac1:45.3125, lr:0.0100
+Ep:[2/10], Ba:[91/223], ls1:0.8595, lmc:37.9230, ladv:0.6704, ac1:70.3125, lr:0.0100
+Ep:[2/10], Ba:[121/223], ls1:0.7654, lmc:29.2895, ladv:0.6954, ac1:70.3125, lr:0.0100
+Ep:[2/10], Ba:[151/223], ls1:1.1421, lmc:31.2097, ladv:0.6901, ac1:56.2500, lr:0.0100
+Ep:[2/10], Ba:[181/223], ls1:0.8731, lmc:36.8769, ladv:0.6969, ac1:76.5625, lr:0.0100
+Ep:[2/10], Ba:[211/223], ls1:0.7252, lmc:25.2857, ladv:0.6836, ac1:68.7500, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[2]  Acc 76.618
+
+training time of this epoch: 0:01:56.958244
+testing time of this epoch: 0:00:02.254966
+Ep:[3/10], Ba:[1/223], ls1:0.9061, lmc:32.3426, ladv:0.6961, ac1:65.6250, lr:0.0100
+Ep:[3/10], Ba:[31/223], ls1:0.5578, lmc:18.5950, ladv:0.6906, ac1:79.6875, lr:0.0100
+Ep:[3/10], Ba:[61/223], ls1:0.6188, lmc:32.6431, ladv:0.6903, ac1:76.5625, lr:0.0100
+Ep:[3/10], Ba:[91/223], ls1:0.8596, lmc:28.6092, ladv:0.6812, ac1:73.4375, lr:0.0100
+Ep:[3/10], Ba:[121/223], ls1:1.0660, lmc:32.1677, ladv:0.6912, ac1:68.7500, lr:0.0100
+Ep:[3/10], Ba:[151/223], ls1:0.6580, lmc:25.7500, ladv:0.6903, ac1:75.0000, lr:0.0100
+Ep:[3/10], Ba:[181/223], ls1:0.8970, lmc:26.6726, ladv:0.6839, ac1:68.7500, lr:0.0100
+Ep:[3/10], Ba:[211/223], ls1:0.6785, lmc:24.5064, ladv:0.6919, ac1:78.1250, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[3]  Acc 77.265
+
+training time of this epoch: 0:01:57.184819
+testing time of this epoch: 0:00:02.261697
+Ep:[4/10], Ba:[1/223], ls1:0.6827, lmc:22.9113, ladv:0.6875, ac1:79.6875, lr:0.0100
+Ep:[4/10], Ba:[31/223], ls1:0.7606, lmc:28.0147, ladv:0.69, ac1:73.4375, lr:0.0100
+Ep:[4/10], Ba:[61/223], ls1:0.5246, lmc:20.3547, ladv:0.6883, ac1:79.6875, lr:0.0100
+Ep:[4/10], Ba:[91/223], ls1:0.7294, lmc:22.4044, ladv:0.6817, ac1:79.6875, lr:0.0100
+Ep:[4/10], Ba:[121/223], ls1:0.6858, lmc:21.9540, ladv:0.6895, ac1:71.8750, lr:0.0100
+Ep:[4/10], Ba:[151/223], ls1:0.7784, lmc:23.3715, ladv:0.6794, ac1:71.8750, lr:0.0100
+Ep:[4/10], Ba:[181/223], ls1:0.6342, lmc:19.7474, ladv:0.7008, ac1:78.1250, lr:0.0100
+Ep:[4/10], Ba:[211/223], ls1:0.6684, lmc:20.4818, ladv:0.6776, ac1:78.1250, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[4]  Acc 77.184
+
+training time of this epoch: 0:01:57.562441
+testing time of this epoch: 0:00:02.316824
+Ep:[5/10], Ba:[1/223], ls1:0.5527, lmc:17.4259, ladv:0.6874, ac1:84.3750, lr:0.0100
+Ep:[5/10], Ba:[31/223], ls1:0.4962, lmc:19.1697, ladv:0.6965, ac1:82.8125, lr:0.0100
+Ep:[5/10], Ba:[61/223], ls1:0.8526, lmc:20.9030, ladv:0.6862, ac1:67.1875, lr:0.0100
+Ep:[5/10], Ba:[91/223], ls1:0.6562, lmc:17.7070, ladv:0.6904, ac1:76.5625, lr:0.0100
+Ep:[5/10], Ba:[121/223], ls1:0.7173, lmc:20.4740, ladv:0.6853, ac1:70.3125, lr:0.0100
+Ep:[5/10], Ba:[151/223], ls1:0.5367, lmc:17.2074, ladv:0.6902, ac1:78.1250, lr:0.0100
+Ep:[5/10], Ba:[181/223], ls1:0.5105, lmc:14.9862, ladv:0.6777, ac1:81.2500, lr:0.0100
+Ep:[5/10], Ba:[211/223], ls1:0.6919, lmc:16.7898, ladv:0.6675, ac1:70.3125, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[5]  Acc 81.230
+
+training time of this epoch: 0:01:56.857464
+testing time of this epoch: 0:00:02.254403
+Ep:[6/10], Ba:[1/223], ls1:0.6041, lmc:15.2307, ladv:0.6651, ac1:79.6875, lr:0.0100
+Ep:[6/10], Ba:[31/223], ls1:0.3503, lmc:14.5821, ladv:0.6729, ac1:89.0625, lr:0.0100
+Ep:[6/10], Ba:[61/223], ls1:0.6268, lmc:16.7116, ladv:0.6791, ac1:81.2500, lr:0.0100
+Ep:[6/10], Ba:[91/223], ls1:0.3867, lmc:11.9530, ladv:0.669, ac1:89.0625, lr:0.0100
+Ep:[6/10], Ba:[121/223], ls1:0.4431, lmc:15.6102, ladv:0.6927, ac1:90.6250, lr:0.0100
+Ep:[6/10], Ba:[151/223], ls1:0.5800, lmc:18.4920, ladv:0.6825, ac1:79.6875, lr:0.0100
+Ep:[6/10], Ba:[181/223], ls1:0.5443, lmc:15.1819, ladv:0.6803, ac1:84.3750, lr:0.0100
+Ep:[6/10], Ba:[211/223], ls1:0.5936, lmc:14.9187, ladv:0.6881, ac1:79.6875, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[6]  Acc 80.502
+
+training time of this epoch: 0:01:56.241721
+testing time of this epoch: 0:00:02.273845
+Ep:[7/10], Ba:[1/223], ls1:0.6093, lmc:14.8116, ladv:0.681, ac1:76.5625, lr:0.0100
+Ep:[7/10], Ba:[31/223], ls1:0.6434, lmc:15.0642, ladv:0.667, ac1:82.8125, lr:0.0100
+Ep:[7/10], Ba:[61/223], ls1:0.3766, lmc:12.3760, ladv:0.6925, ac1:87.5000, lr:0.0100
+Ep:[7/10], Ba:[91/223], ls1:0.3683, lmc:15.1259, ladv:0.6757, ac1:84.3750, lr:0.0100
+Ep:[7/10], Ba:[121/223], ls1:0.6206, lmc:17.3055, ladv:0.6746, ac1:73.4375, lr:0.0100
+Ep:[7/10], Ba:[151/223], ls1:0.6664, lmc:11.0830, ladv:0.6824, ac1:81.2500, lr:0.0100
+Ep:[7/10], Ba:[181/223], ls1:0.6157, lmc:13.3352, ladv:0.6662, ac1:81.2500, lr:0.0100
+Ep:[7/10], Ba:[211/223], ls1:0.4851, lmc:15.9787, ladv:0.6748, ac1:82.8125, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[7]  Acc 81.715
+
+training time of this epoch: 0:01:55.571539
+testing time of this epoch: 0:00:02.228661
+Ep:[8/10], Ba:[1/223], ls1:0.4857, lmc:14.0194, ladv:0.679, ac1:82.8125, lr:0.0100
+Ep:[8/10], Ba:[31/223], ls1:0.4612, lmc:11.2757, ladv:0.6764, ac1:78.1250, lr:0.0100
+Ep:[8/10], Ba:[61/223], ls1:0.4511, lmc:17.1981, ladv:0.6792, ac1:84.3750, lr:0.0100
+Ep:[8/10], Ba:[91/223], ls1:0.5430, lmc:11.7302, ladv:0.6731, ac1:78.1250, lr:0.0100
+Ep:[8/10], Ba:[121/223], ls1:0.4590, lmc:11.0044, ladv:0.6808, ac1:85.9375, lr:0.0100
+Ep:[8/10], Ba:[151/223], ls1:0.5441, lmc:14.8048, ladv:0.6698, ac1:82.8125, lr:0.0100
+Ep:[8/10], Ba:[181/223], ls1:0.5154, lmc:15.6786, ladv:0.6706, ac1:78.1250, lr:0.0100
+Ep:[8/10], Ba:[211/223], ls1:0.4706, lmc:12.6757, ladv:0.6694, ac1:84.3750, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[8]  Acc 78.074
+
+training time of this epoch: 0:01:55.172621
+testing time of this epoch: 0:00:02.336840
+Ep:[9/10], Ba:[1/223], ls1:0.3205, lmc:12.2604, ladv:0.6866, ac1:90.6250, lr:0.0100
+Ep:[9/10], Ba:[31/223], ls1:0.4697, lmc:13.7569, ladv:0.6969, ac1:84.3750, lr:0.0100
+Ep:[9/10], Ba:[61/223], ls1:0.2625, lmc:8.7267, ladv:0.6828, ac1:89.0625, lr:0.0100
+Ep:[9/10], Ba:[91/223], ls1:0.5859, lmc:12.5605, ladv:0.67, ac1:78.1250, lr:0.0100
+Ep:[9/10], Ba:[121/223], ls1:0.3901, lmc:11.0346, ladv:0.679, ac1:87.5000, lr:0.0100
+Ep:[9/10], Ba:[151/223], ls1:0.2345, lmc:7.2353, ladv:0.6906, ac1:92.1875, lr:0.0100
+Ep:[9/10], Ba:[181/223], ls1:0.4327, lmc:15.3807, ladv:0.6873, ac1:90.6250, lr:0.0100
+Ep:[9/10], Ba:[211/223], ls1:0.5567, lmc:11.0085, ladv:0.676, ac1:82.8125, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[9]  Acc 79.288
+
+training time of this epoch: 0:01:54.840695
+testing time of this epoch: 0:00:02.223872
+Ep:[10/10], Ba:[1/223], ls1:0.4275, lmc:14.2495, ladv:0.6721, ac1:85.9375, lr:0.0100
+Ep:[10/10], Ba:[31/223], ls1:0.4092, lmc:9.6699, ladv:0.6817, ac1:85.9375, lr:0.0100
+Ep:[10/10], Ba:[61/223], ls1:0.3489, lmc:13.0221, ladv:0.6716, ac1:87.5000, lr:0.0100
+Ep:[10/10], Ba:[91/223], ls1:0.4383, lmc:16.5444, ladv:0.6572, ac1:85.9375, lr:0.0100
+Ep:[10/10], Ba:[121/223], ls1:0.3035, lmc:11.7879, ladv:0.6525, ac1:87.5000, lr:0.0100
+Ep:[10/10], Ba:[151/223], ls1:0.3032, lmc:9.5471, ladv:0.6706, ac1:90.6250, lr:0.0100
+Ep:[10/10], Ba:[181/223], ls1:0.5720, lmc:11.9240, ladv:0.6529, ac1:81.2500, lr:0.0100
+Ep:[10/10], Ba:[211/223], ls1:0.3316, lmc:9.2197, ladv:0.6737, ac1:87.5000, lr:0.0100
+ACC on :  ck+
+
+
+=> Test[10]  Acc 80.340
+
+training time of this epoch: 0:01:55.013192
+testing time of this epoch: 0:00:02.237802
+- Best:  Acc  0.000 at 7
