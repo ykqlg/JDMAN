@@ -1,0 +1,33 @@
+python -u main.py ^
+-shuffle ^
+-aug ^
+-model resnet50_with_adlayer_all ^
+-pretrained ./model/pre_trained/resnet50.pth ^
+-train_list0 D:/Desktop/Datasets/CDFER-Datasets/RAFall/RAFlist.txt ^
+-train_list1 path_to_the_training_data/raf-db.txt ^
+-test_list1 path_to_the_testing_data/raf-db.txt ^
+-test_list2 path_to_the_testing_data/affectnet.txt ^
+-test_list3  path_to_the_testing_data/fer2013.txt ^
+-test_list4 D:/Desktop/Datasets/CDFER-Datasets/CK/CKlist.txt ^
+-test_list5 path_to_the_testing_data/mmi.txt ^
+-test_list6 path_to_the_testing_data/jaffe.txt ^
+-test_list7 path_to_the_testing_data/oul-CASIA.txt ^
+-test_list8 path_to_the_testing_data/sfew.txt ^
+-test_list9 D:/Desktop/Datasets/CDFER-Datasets/CK/CKlist.txt  ^
+-test_list10 path_to_the_testing_data/jaffe_add1.txt ^
+-print True ^
+-save_path /save_path/ ^
+-criterion mc_loss_center ^
+-MI ^
+-lam 0.01 ^
+-train_data raf2 ^
+-target ck+ ^
+-test_data ck+ ^
+-output_classes 7 ^
+-n_epochs 60 ^
+-learn_rate 0.01 ^
+-batch_size 64 ^
+-workers 8 ^
+-nGPU 0 ^
+-decay 30 ^
+-log_path ./logs

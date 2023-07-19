@@ -5,7 +5,7 @@ import datetime
 from model import resnet
 import cmmd
 import mmd
-from my_loss import MC_Loss_dis_1_center,CDAN
+from my_loss import MC_Loss_dis_1_center,CDAN,Entropy
 import numpy as np
 class Trainer:
     def __init__(self,args,model,adv_model):
