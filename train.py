@@ -147,7 +147,7 @@ class Trainer:
                     outputs = torch.cat((output_1, output_2), dim=0)
                     softmax_out = torch.nn.Softmax(dim=1)(outputs)
                     entropy = Entropy(softmax_out)
-                    adv_loss = CDAN([features, softmax_out], self.adv_model, entropy=None, coeff=resnet.calc_coeff(epoch*112+i), random_layer=None)
+                    adv_loss = CDAN([features, softmax_out], self.adv_model, entropy=entropy, coeff=resnet.calc_coeff(epoch*112+i), random_layer=None)
                     if 'mc_loss' in self.args.criterion:
                         weight = 2.0 / (1 + np.exp(-10 * ((epoch*112+i) / (self.args.n_epochs*112)))) - 1.0 #112 iter each epoch
                         if self.args.model == 'resnet50_with_adlayer_all':
