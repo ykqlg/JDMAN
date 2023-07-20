@@ -1,8 +1,8 @@
 python -u main.py ^
 -shuffle ^
 -aug ^
--model resnet50_with_adlayer_all ^
--pretrained ./model/pre_trained/resnet50.pth ^
+-model vgg16 ^
+-pretrained ./model/pre_trained/vgg16_bn-6c64b313.pth ^
 -train_list0 D:/Desktop/Datasets/CDFER-Datasets/RAFall/RAFlist.txt ^
 -train_list1 path_to_the_training_data/raf-db.txt ^
 -test_list1 path_to_the_testing_data/raf-db.txt ^
@@ -15,7 +15,7 @@ python -u main.py ^
 -test_list8 path_to_the_testing_data/sfew.txt ^
 -test_list9 D:/Desktop/Datasets/CDFER-Datasets/CK/CKlist.txt  ^
 -test_list10 path_to_the_testing_data/jaffe_add1.txt ^
--print True ^
+-print ^
 -save_path /save_path/ ^
 -criterion mc_loss_center ^
 -MI ^
@@ -27,7 +27,7 @@ python -u main.py ^
 -n_epochs 60 ^
 -learn_rate 0.01 ^
 -batch_size 64 ^
--workers 8 ^
+-workers 1 ^
 -nGPU 0 ^
 -decay 30 ^
 -log_path ./logs

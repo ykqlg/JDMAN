@@ -21,8 +21,10 @@ class Trainer:
         else:
             parameter_list = model.get_parameters()
         if self.args.criterion == 'mc_loss_center':
-            self.mc_loss = MC_Loss_dis_1_center(num_classes=self.args.output_classes, feat_dim=3072,
-                                       lamda1=self.args.lam1).cuda()  # lamda1 for inter_class loss
+            # self.mc_loss = MC_Loss_dis_1_center(num_classes=self.args.output_classes, feat_dim=3072,
+            #                            lamda1=self.args.lam1).cuda()  # lamda1 for inter_class loss
+            self.mc_loss = MC_Loss_dis_1_center(num_classes=self.args.output_classes, feat_dim=4096,
+                                                lamda1=self.args.lam1).cuda()
 
         if 'mc_loss'in self.args.criterion:
             self.optimizer4center = optim.SGD(
@@ -114,7 +116,9 @@ class Trainer:
             j = 1
             while i < len_dataloader1:
                 # Training model using 1st dataset
-                data_1 = data_1_iter.next()
+                # data_1 = data_1_iter.next()
+                data_1 = next(data_1_iter)
+
                 data_1_img, data_1_label = data_1[0].cuda(), data_1[1].cuda()
 
                 output_1, features_1 = model(data_1_img)
@@ -123,12 +127,16 @@ class Trainer:
 
                 # Training model using 2nd dataset
                 if j<len_dataloader2:
-                    data_2 = data_2_iter.next()
+                    # data_2 = data_2_iter.next()
+                    data_2 = next(data_2_iter)
+
                     j += 1
                 else:
                     data_2_iter = iter(test_loader[0])
+
                     j = 1
-                    data_2 = data_2_iter.next()
+                    # data_2 = data_2_iter.next()
+                    data_2 = next(data_2_iter)
                 data_2_img, data_2_label = data_2[0].cuda(), data_2[1].cuda()
                 output_2, features_2 = model(data_2_img)
                 labels_target_fake = torch.max(torch.nn.Softmax(dim=1)(output_2), 1)[1]

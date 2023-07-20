@@ -36,7 +36,8 @@ def create_model(args):
     if args.MI == True:
         # optimize mutual information by adversarial learning according to
         # Self-supervised representation learning from multi-domain data
-        adv_model = AdversarialNetwork(3072, 512, args.n_epochs * 112)
+        # adv_model = AdversarialNetwork(3072, 512, args.n_epochs * 112) # for resnet50?
+        adv_model = AdversarialNetwork(4096, 512, args.n_epochs * 112) # for resnet50?
 
     if args.resume: # 模型恢复
         save_path = os.path.join(args.save_path)  # 模型保存目录
