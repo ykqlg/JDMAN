@@ -21,10 +21,10 @@ class Trainer:
         else:
             parameter_list = model.get_parameters()
         if self.args.criterion == 'mc_loss_center':
-            # self.mc_loss = MC_Loss_dis_1_center(num_classes=self.args.output_classes, feat_dim=3072,
-            #                            lamda1=self.args.lam1).cuda()  # lamda1 for inter_class loss
-            self.mc_loss = MC_Loss_dis_1_center(num_classes=self.args.output_classes, feat_dim=4096,
-                                                lamda1=self.args.lam1).cuda()
+            self.mc_loss = MC_Loss_dis_1_center(num_classes=self.args.output_classes, feat_dim=3072,
+                                       lamda1=self.args.lam1).cuda()  # lamda1 for inter_class loss
+            # self.mc_loss = MC_Loss_dis_1_center(num_classes=self.args.output_classes, feat_dim=4096,
+                                                # lamda1=self.args.lam1).cuda()
 
         if 'mc_loss'in self.args.criterion:
             self.optimizer4center = optim.SGD(

@@ -185,6 +185,13 @@ def vgg16_bn(args, **kwargs):
     if args.pretrained:
         kwargs['init_weights'] = False
         model = VGG(make_layers(cfg['D'], batch_norm=True), **kwargs)
+        if args.test_only:
+            trained_dict = torch.load(args.pretrained)
+            # del trained_dict["state"]
+            trained_dict_model = trained_dict["model"]
+            model.load_state_dict(trained_dict_model)
+            return model
+        
         pretrained_dict = torch.load(args.pretrained)
         model_dict = model.state_dict()
         keys = deepcopy(pretrained_dict).keys()

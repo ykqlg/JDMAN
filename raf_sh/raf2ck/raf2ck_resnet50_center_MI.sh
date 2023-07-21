@@ -24,7 +24,7 @@ python -u main.py \
     -target ck+ \
     -test_data ck+ \
     -output_classes 7 \
-    -n_epochs 10 \
+    -n_epochs 30 \
     -learn_rate 0.01 \
     -batch_size 64 \
     -workers 8 \

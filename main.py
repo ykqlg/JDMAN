@@ -36,8 +36,8 @@ def create_model(args):
     if args.MI == True:
         # optimize mutual information by adversarial learning according to
         # Self-supervised representation learning from multi-domain data
-        # adv_model = AdversarialNetwork(3072, 512, args.n_epochs * 112) # for resnet50?
-        adv_model = AdversarialNetwork(4096, 512, args.n_epochs * 112) # for resnet50?
+        adv_model = AdversarialNetwork(3072, 512, args.n_epochs * 112) # for resnet50
+        # adv_model = AdversarialNetwork(4096, 512, args.n_epochs * 112) # for vgg16
 
     if args.resume: # 模型恢复
         save_path = os.path.join(args.save_path)  # 模型保存目录
@@ -94,7 +94,7 @@ def main():
 
     if args.test_only: # 仅测试，前提是已经有训练好的模型了
        test_summary = trainer.test(0, val_loader)
-       print("- Test:  Acc %6.3f " % (test_summary['acc']))
+       print("- Test:  Acc %6.3f " % (test_summary['domain_acc'][1]))
     else: # 训练模式
         print(args.print)
         start_epoch = logger.state['epoch'] + 1 # 开始于上一次训练的下一个epoch

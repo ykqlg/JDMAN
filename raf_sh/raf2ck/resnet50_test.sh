@@ -1,29 +1,29 @@
 python -u main.py \
     -shuffle \
     -aug \
-    -model vgg16 \
+    -model resnet50_with_adlayer_all \
     -test_only \
-    -pretrained ./model/pre_trained/vgg16_bn-6c64b313.pth \
+    -pretrained ./save_path/model_28_acc_89.88673400878906.pth \
     -train_list0 /home/u200110514/data/RAFall/RAFlist.txt \
     -train_list1 path_to_the_training_data/raf-db.txt \
     -test_list1 path_to_the_testing_data/raf-db.txt \
     -test_list2 path_to_the_testing_data/affectnet.txt \
     -test_list3  /home/u200110514/data/FER/FERlist.txt \
     -test_list4 /home/u200110514/data/CK/CKlist.txt \
-    -test_list5 path_to_the_testing_data/mmi.txt \
+    -test_list5 /home/u200110514/data/MMI/MMIlist.txt \
     -test_list6  /home/u200110514/data//JAFFE/JAFFElist.txt \
     -test_list7 path_to_the_testing_data/oul-CASIA.txt \
-    -test_list8 path_to_the_testing_data/sfew.txt \
+    -test_list8 /home/u200110514/data/SFEW/SFEWlist.txt \
     -test_list9 /home/u200110514/data/CK/CKlist.txt \
-    -test_list10 path_to_the_testing_data/jaffe_add1.txt \
+    -test_list10 /home/u200110514/data//JAFFE/JAFFElist.txt \
     -save_path ./save_path  \
     -print True \
     -criterion mc_loss_center \
     -MI \
     -lam 0.01 \
     -train_data raf2 \
-    -target ck+ \
-    -test_data ck+ \
+    -target jaf \
+    -test_data jaf \
     -output_classes 7 \
     -n_epochs 60 \
     -learn_rate 0.01 \

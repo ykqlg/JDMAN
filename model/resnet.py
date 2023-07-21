@@ -608,7 +608,15 @@ def resnet50_with_adlayer(args):
         pretrained (bool): If True, returns a model pre-trained on ImageNet
     """
     if args.pretrained:
+        # zhw added this part for test_only
         model = ResNet_with_ADlayer(Bottleneck, [3, 4, 6, 3], args)
+        if args.test_only:
+            trained_dict = torch.load(args.pretrained)
+            # del trained_dict["state"]
+            trained_dict_model = trained_dict["model"]
+            model.load_state_dict(trained_dict_model)
+            return model
+            
         pretrained_dict = torch.load(args.pretrained)
         model_dict = model.state_dict()
 
@@ -623,6 +631,7 @@ def resnet50_with_adlayer(args):
         model.load_state_dict(model_dict)
 
         return model
+    
 
     return ResNet(Bottleneck, [3, 4, 6, 3], args)
 
