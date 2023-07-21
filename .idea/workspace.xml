@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b785c14a-7d92-4d9d-8bd9-8c4043d45379" name="Changes" comment="- In main.py, Changed  AdversarialNetwork's `infeature` dimension from 3072 to 4096 to fit vgg.&#10;- In train.py, also change the related dimension in self.mc_loss (feat_dim)&#10;- Replaced data_1_iter.next() with next(data_1_iter) to solve my bug(maybe specific to Windows?)">
+    <list default="true" id="b785c14a-7d92-4d9d-8bd9-8c4043d45379" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/logs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
       <workItem from="1689778993371" duration="1441000" />
       <workItem from="1689811765416" duration="9559000" />
       <workItem from="1689822012762" duration="4549000" />
-      <workItem from="1689834201970" duration="17549000" />
+      <workItem from="1689834201970" duration="18209000" />
     </task>
     <task id="LOCAL-00001" summary="- In main.py, Changed  AdversarialNetwork's `infeature` dimension from 3072 to 4096 to fit vgg.&#10;- In train.py, also change the related dimension in self.mc_loss (feat_dim)&#10;- Replaced data_1_iter.next() with next(data_1_iter) to solve my bug(maybe specific to Windows?)">
       <created>1689838498788</created>
@@ -79,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689838498788</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1689861285685</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689861285686</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +119,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- In main.py, Changed  AdversarialNetwork's `infeature` dimension from 3072 to 4096 to fit vgg.&#10;- In train.py, also change the related dimension in self.mc_loss (feat_dim)&#10;- Replaced data_1_iter.next() with next(data_1_iter) to solve my bug(maybe specific to Windows?)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- In main.py, Changed  AdversarialNetwork's `infeature` dimension from 3072 to 4096 to fit vgg.&#10;- In train.py, also change the related dimension in self.mc_loss (feat_dim)&#10;- Replaced data_1_iter.next() with next(data_1_iter) to solve my bug(maybe specific to Windows?)" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
